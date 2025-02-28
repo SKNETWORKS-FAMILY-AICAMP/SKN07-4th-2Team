@@ -1,6 +1,5 @@
 # 패키지 임포트
 import streamlit as st
-
 from DBClient import DBClient
 from GptAgent import GptAgent
 from pdf_util import PdfUploader
@@ -26,25 +25,30 @@ def init(uploaded_file):
     
     if summary is not None:
     # 사이드바에 요약 표시
-        st.sidebar.subheader("📜 PDF 요약")
-        st.sidebar.write(summary)
+        st.write("📜 PDF 요약")
+        st.write(summary)
 
 # 초기화
 if 'conversation' not in st.session_state:
     st.session_state.conversation = []
 
 # 페이지 세팅
-st.set_page_config(page_title="SKNETWORKS-FAMILY-AICAMP/SKN07-3rd-2Team", layout='wide')
-st.title('📱 스마트폰 사용메뉴얼 기반 Q&A')
-# st.header('제품: Samsung S25')
+st.set_page_config(page_title="SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team", layout='wide')
+st.title('📑 사용자별 문서 기반 Q&A')
 
-# 파일 업로드
-with st.sidebar:
+# 탭 구성
+tab1, tab2 = st.tabs(["📄 파일 업로드 및 요약", "💬 질문 및 답변"])
+
+# 파일 업로드 탭
+with tab1:
+    st.header("PDF 파일 업로드 및 요약")
     uploaded_file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"])
     if uploaded_file:
         init(uploaded_file)
 
-with st.container():
+# 질문 탭
+with tab2:
+    st.header("문서 기반 질문 및 답변")
     with st.expander("질문&답변 히스토리 보기", expanded=False):
         for q, a in st.session_state.conversation:
             with st.chat_message('user'):
@@ -52,7 +56,6 @@ with st.container():
             with st.chat_message('assistant'):
                 st.write(a)
 
-with st.container():
     # 프롬프트 입력 box
     question = st.chat_input('질문을 입력하세요')
     if question:
