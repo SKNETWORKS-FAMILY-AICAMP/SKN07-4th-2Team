@@ -7,6 +7,7 @@ import os
 class PdfUploader():
     __ROOT_PATH = './db/temp'
     def __init__(self,
+                 db_client:DBClient,
                  model_name:str = 'gpt-4o-mini-2024-07-18'
                  ):
         os.makedirs(PdfUploader.__ROOT_PATH, exist_ok=True)
@@ -19,10 +20,11 @@ class PdfUploader():
             chunk_overlap=50
         )
 
-        self.__db_client = DBClient()
+        self.__db_client = db_client
         pass
 
     def upload(self, __file):
+        print(f'file is {__file.name}')
         file_path = self.__save_file(__file)
         __document = None
         __summary = None

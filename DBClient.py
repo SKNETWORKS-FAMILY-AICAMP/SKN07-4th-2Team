@@ -3,13 +3,14 @@ from langchain_chroma import Chroma
 
 class DBClient():
     def __init__(self, 
+                 session_key:str,
                  persist_directory:str = './db/VectorDB',
                  embedding_model="text-embedding-ada-002"):
         self.__embeddings = OpenAIEmbeddings( #← OpenAIEmbeddings를 초기화
             model=embedding_model
         )
         self.__vector_store = Chroma(
-            persist_directory=persist_directory,
+            persist_directory=persist_directory+'/'+session_key,
             embedding_function=self.__embeddings,
         )
         pass

@@ -3,34 +3,65 @@ import streamlit as st
 from DBClient import DBClient
 from GptAgent import GptAgent
 from pdf_util import PdfUploader
+import datetime 
+import random
 
 # Croma DB 접속용 클라이언트 인스턴스화
-db_client = DBClient()
-gpt_agent = GptAgent(retriever=db_client.get_retriever())
-pdf_uploader = PdfUploader()
+db_client = None
+gpt_agent = None
+pdf_uploader = None
+
+def initDB(session_key:str):
+    db_client = DBClient(session_key=session_key)
+    gpt_agent = GptAgent(retriever=db_client.get_retriever())
+    pdf_uploader = PdfUploader(db_client=db_client)
+    return db_client, gpt_agent, pdf_uploader
 
 # 데이터 업로드 및 크로마DB 저장
-@st.cache_data # decorator 1번만 실행후 재실행 금지
-def init(uploaded_file):
-    if uploaded_file is None:
-        return
-    
-    success, summary =  pdf_uploader.upload(uploaded_file)
+# @st.cache_data # decorator 1번만 실행후 재실행 금지
+def uploadFile():
+    with st.empty():
+        key = st.session_state.file_uploser_key
+        file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"], key=key)
+        if file is not None:
+            success, summary =  pdf_uploader.upload(file)
+            if success:
+                st.success("PDF 파일이 성공적으로 처리되었습니다!")
+                item = {'file_name':file.name, 'summary':summary}
+                st.session_state.filenames.append(item)
+            else:
+                st.error("PDF 파일 처리에 실패했습니다!")
+            
+            import time
+            time.sleep(1)
 
-    if success:
-        st.success("PDF 파일이 성공적으로 처리되었습니다!")
-    else:
-        st.error("PDF 파일 처리에 실패했습니다!")
-        return
-    
-    if summary is not None:
-    # 사이드바에 요약 표시
+            st.session_state.file_uploser_key = get_key()
+            uploadFile()
+                
+
+# 사이드바에 요약 표시           
+def print_file_list():
+    for item in st.session_state.filenames:
+        st.write(f"📑 {item['file_name']}")
         st.write("📜 PDF 요약")
-        st.write(summary)
+        st.write(item['summary'])  
+
+def get_key():
+    return datetime.datetime.now().strftime('%Y%m%d%H%M%S') + str(random.randint(1000,1999))
 
 # 초기화
 if 'conversation' not in st.session_state:
+    # random.seed(47)
+    session_key = get_key()
+    db_client, gpt_agent, pdf_uploader = initDB(session_key=session_key)
+
+    st.session_state.session_key = session_key
     st.session_state.conversation = []
+    st.session_state.filenames=[]
+    st.session_state.file_uploser_key = get_key()
+else:
+    session_key= st.session_state.session_key
+    db_client, gpt_agent, pdf_uploader = initDB(session_key=session_key)
 
 # 페이지 세팅
 st.set_page_config(page_title="SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team", layout='wide')
@@ -41,10 +72,10 @@ tab1, tab2 = st.tabs(["📄 파일 업로드 및 요약", "💬 질문 및 답�
 
 # 파일 업로드 탭
 with tab1:
-    st.header("PDF 파일 업로드 및 요약")
-    uploaded_file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"])
-    if uploaded_file:
-        init(uploaded_file)
+    tab1.header("PDF 파일 업로드 및 요약")
+    uploadFile()
+    print_file_list()
+
 
 # 질문 탭
 with tab2:
@@ -58,7 +89,7 @@ with tab2:
 
     # 프롬프트 입력 box
     question = st.chat_input('질문을 입력하세요')
-    if question:
+    if question is not None:
         with st.chat_message('user'):
             st.write(question)
         
