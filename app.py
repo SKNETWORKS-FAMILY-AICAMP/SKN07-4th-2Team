@@ -10,7 +10,7 @@ import random
 db_client = None
 gpt_agent = None
 pdf_uploader = None
-UPLOAD_FILE_LIMIT = 1
+UPLOAD_FILE_LIMIT = 2
 
 def initDB(session_key:str):
     db_client = DBClient(session_key=session_key)
@@ -43,19 +43,18 @@ def uploadFile():
         st.error(f"PDF 파일이 최대치인 {UPLOAD_FILE_LIMIT}개 업로드 되었습니다.")
                 
 
-# 사이드바에 요약 표시           
+# 사이드바에 요약 표시
 def print_file_list():
+    print('check : list filenames')
     for item in st.session_state.filenames:
-        st.write(f"📑 {item['file_name']}")
-        st.write("📜 PDF 요약")
-        st.write(item['summary'])  
+        with st.expander(f"📑 {item['file_name']}", expanded=True):
+            st.write("📜 PDF 요약")
+            st.write(item['summary'])
 
 def get_key():
     return datetime.datetime.now().strftime('%Y%m%d%H%M%S') + str(random.randint(1000,1999))
 
-# 초기화
-if 'conversation' not in st.session_state:
-    # random.seed(47)
+def init():
     session_key = get_key()
     db_client, gpt_agent, pdf_uploader = initDB(session_key=session_key)
 
@@ -63,6 +62,17 @@ if 'conversation' not in st.session_state:
     st.session_state.conversation = []
     st.session_state.filenames=[]
     st.session_state.file_uploser_key = get_key()
+    st.session_state.is_reset = False
+
+def reset():
+    with bt_p:
+        with st.spinner("시스템을 초기화 합니다."):
+            init()
+            bt_p.success('시스템 초기화를 완료하였습니다.')
+
+# 초기화
+if 'conversation' not in st.session_state:
+    init()
 else:
     session_key= st.session_state.session_key
     db_client, gpt_agent, pdf_uploader = initDB(session_key=session_key)
@@ -78,6 +88,12 @@ tab1, tab2 = st.tabs(["📄 파일 업로드 및 요약", "💬 질문 및 답�
 with tab1:
     tab1.header("PDF 파일 업로드 및 요약")
     uploadFile()
+
+    bt_p = st.empty()
+    
+    if len(st.session_state.filenames) > 0:
+        st.button("초기화",on_click=reset)
+    
     print_file_list()
 
 

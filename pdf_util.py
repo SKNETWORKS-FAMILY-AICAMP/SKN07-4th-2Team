@@ -25,12 +25,14 @@ class PdfUploader():
 
     def upload(self, __file):
         print(f'file is {__file.name}')
+    
         file_path = self.__save_file(__file)
         __document = None
         __summary = None
         try:
             __document = self.__add_to_db(file_path)
             __summary = self.__summarize_document(__document)
+            # __summary = "test"
         except Exception as e:
             print(f'Error:\n\t{e}')
         finally:

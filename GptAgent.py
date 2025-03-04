@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 
 class GptAgent():
     __TEMPLATE = """
-    당신은 사용자 매뉴얼을 안내하는 AI 어시스턴트입니다. 사용자의 질문에 대해 컨텍스트를 바탕으로 명확하고 자세한 답변을 제공하세요.
+    당신은 사용자별 문서에 기반하여 안내하는 AI 어시스턴트입니다. 사용자의 질문에 대해 컨텍스트를 바탕으로 명확하고 자세한 답변을 제공하세요.
 
     ### [컨텍스트]
     {context}
