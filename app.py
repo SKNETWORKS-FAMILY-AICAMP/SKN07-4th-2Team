@@ -10,6 +10,7 @@ import random
 db_client = None
 gpt_agent = None
 pdf_uploader = None
+UPLOAD_FILE_LIMIT = 1
 
 def initDB(session_key:str):
     db_client = DBClient(session_key=session_key)
@@ -20,23 +21,26 @@ def initDB(session_key:str):
 # 데이터 업로드 및 크로마DB 저장
 # @st.cache_data # decorator 1번만 실행후 재실행 금지
 def uploadFile():
-    with st.empty():
-        key = st.session_state.file_uploser_key
-        file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"], key=key)
-        if file is not None:
-            success, summary =  pdf_uploader.upload(file)
-            if success:
-                st.success("PDF 파일이 성공적으로 처리되었습니다!")
-                item = {'file_name':file.name, 'summary':summary}
-                st.session_state.filenames.append(item)
-            else:
-                st.error("PDF 파일 처리에 실패했습니다!")
-            
-            import time
-            time.sleep(1)
+    if len(st.session_state.filenames) < UPLOAD_FILE_LIMIT:
+        with st.empty():
+            key = st.session_state.file_uploser_key
+            file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"], key=key)
+            if file is not None:
+                success, summary =  pdf_uploader.upload(file)
+                if success:
+                    st.success("PDF 파일이 성공적으로 처리되었습니다!")
+                    item = {'file_name':file.name, 'summary':summary}
+                    st.session_state.filenames.append(item)
+                else:
+                    st.error("PDF 파일 처리에 실패했습니다!")
+                
+                import time
+                time.sleep(1)
 
-            st.session_state.file_uploser_key = get_key()
-            uploadFile()
+                st.session_state.file_uploser_key = get_key()
+                uploadFile()
+    else:
+        st.error(f"PDF 파일이 최대치인 {UPLOAD_FILE_LIMIT}개 업로드 되었습니다.")
                 
 
 # 사이드바에 요약 표시           
