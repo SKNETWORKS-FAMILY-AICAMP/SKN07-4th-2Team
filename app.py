@@ -10,7 +10,7 @@ import random
 db_client = None
 gpt_agent = None
 pdf_uploader = None
-UPLOAD_FILE_LIMIT = 2
+UPLOAD_FILE_LIMIT = 5
 
 def initDB(session_key:str):
     db_client = DBClient(session_key=session_key)
@@ -24,7 +24,7 @@ def uploadFile():
     if len(st.session_state.filenames) < UPLOAD_FILE_LIMIT:
         with st.empty():
             key = st.session_state.file_uploser_key
-            file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"], key=key)
+            file = st.file_uploader("🗂️ PDF 파일을 업로드하세요 (최대 5개 제한)", type=["pdf"], key=key)
             if file is not None:
                 success, summary =  pdf_uploader.upload(file)
                 if success:
@@ -111,7 +111,7 @@ with tab2:
                 answer = gpt_agent.send_message(question)
                 st.session_state.conversation.append((question, answer))
                 st.write(answer)
-                
+
     # 이전 질문&답변 히스토리 목록화
     with st.expander("질문&답변 히스토리 보기", expanded=False):
         for q, a in st.session_state.conversation:
