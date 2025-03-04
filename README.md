@@ -4,7 +4,7 @@
 
 ---
 
-# 🏃🏃‍♂️🏃‍♀️ 팀명 : 개구리 삼총사
+# 🏃🏃‍♂️🏃‍♀️ 팀명 : 김성근과 아이들
 |<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%84%B1.jpg" alt="김성근" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%85%81.jpg" alt="윤수민" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%88%E3%85%8A.jpg" alt="이재철" width="120"/>|
 |---|---|---|
 | <div align="center">**김성근**</div> | <div align="center">**윤수민**</div> | <div align="center">**이재철**</div> |
@@ -37,9 +37,9 @@
 - 사용자의 인지 부하를 줄이고, 효율적인 정보 탐색을 지원하는 Q&A 시스템 구축
 
 ## 주요 산출물
-1. [요구사항 정의서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
+1. [요구사항 정의서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/%EC%82%B0%EC%B6%9C%EB%AC%BC/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EC%A0%95%EC%9D%98%EC%84%9C.pdf)
 
-2. [화면 설계서](pdf 주소 넣을곳)
+2. [화면 설계서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/%EC%82%B0%EC%B6%9C%EB%AC%BC/%ED%99%94%EB%A9%B4%20%EC%84%A4%EA%B3%84%EC%84%9C.pdf)
 
 3. [개발된 LLM 연동 웹 애플리케이션](http://localhost:8501)
 
@@ -69,17 +69,14 @@
 ## System Architecture
 ![architecture](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-3rd-2Team/blob/main/image/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.jpg)
 
-
 ## 요구사항 정의서
 ![요구사항](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
 
-## 화면 설계서
-
-![화면 설계서](구글 주소 넣어 말아)
-
 ## 애플리케이션 시연
 
-![메인화면](이미지 주소 넣자)
+![시연1](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%8B%9C%EC%97%B0%ED%99%94%EB%A9%B41.jpg)
+
+![시연2](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%8B%9C%EC%97%B0%ED%99%94%EB%A9%B42.jpg)
 
 ---
 
