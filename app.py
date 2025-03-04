@@ -22,7 +22,7 @@ def initDB(session_key:str):
 def uploadFile():
     with st.empty():
         key = st.session_state.file_uploser_key
-        file = st.file_uploader("🗂️ PDF 파일을 업로드하세요", type=["pdf"], key=key)
+        file = st.file_uploader("🗂️ PDF 파일을 업로드하세요 (최대 5개 제한)", type=["pdf"], key=key)
         if file is not None:
             success, summary =  pdf_uploader.upload(file)
             if success:
@@ -39,12 +39,12 @@ def uploadFile():
             uploadFile()
                 
 
-# 사이드바에 요약 표시           
+# 사이드바에 요약 표시
 def print_file_list():
     for item in st.session_state.filenames:
-        st.write(f"📑 {item['file_name']}")
-        st.write("📜 PDF 요약")
-        st.write(item['summary'])  
+        with st.expander(f"📑 {item['file_name']}", expanded=True):
+            st.write("📜 PDF 요약")
+            st.write(item['summary'])
 
 def get_key():
     return datetime.datetime.now().strftime('%Y%m%d%H%M%S') + str(random.randint(1000,1999))
