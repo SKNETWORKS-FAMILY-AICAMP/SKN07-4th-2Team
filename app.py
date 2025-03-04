@@ -96,16 +96,9 @@ with tab1:
     
     print_file_list()
 
-
 # 질문 탭
 with tab2:
     st.header("문서 기반 질문 및 답변")
-    with st.expander("질문&답변 히스토리 보기", expanded=False):
-        for q, a in st.session_state.conversation:
-            with st.chat_message('user'):
-                st.write(q)
-            with st.chat_message('assistant'):
-                st.write(a)
 
     # 프롬프트 입력 box
     question = st.chat_input('질문을 입력하세요')
@@ -118,4 +111,11 @@ with tab2:
                 answer = gpt_agent.send_message(question)
                 st.session_state.conversation.append((question, answer))
                 st.write(answer)
-            
+                
+    # 이전 질문&답변 히스토리 목록화
+    with st.expander("질문&답변 히스토리 보기", expanded=False):
+        for q, a in st.session_state.conversation:
+            with st.chat_message('user'):
+                st.write(q)
+            with st.chat_message('assistant'):
+                st.write(a)
