@@ -68,7 +68,7 @@
 - gpt-4o-mini-2024-07-18
 ---
 ## 요구사항 정의서
-
+![요구사항](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
 ## System Architecture
 ![architecture](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-3rd-2Team/blob/main/image/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.jpg)
 
@@ -88,4 +88,4 @@
 
 윤수민 : 
 
-이재철 : 
+이재철 : 이거 놓으세요 프론트 안해요 아 나참 안한다고요 🤦
