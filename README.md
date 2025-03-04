@@ -1,6 +1,6 @@
 # SKN07-4th-2Team
 
-## LLM을 연동한 내외부 문서 기반 질의 응답 웹페이지 개발
+
 
 ---
 
@@ -8,11 +8,12 @@
 |<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%84%B1.jpg" alt="김성근" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%85%81.jpg" alt="윤수민" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%88%E3%85%8A.jpg" alt="이재철" width="120"/>|
 |---|---|---|
 | <div align="center">**김성근**</div> | <div align="center">**윤수민**</div> | <div align="center">**이재철**</div> |
-| <div align="center">Refactoring</div> | <div align="center">Streamlit</div> | <div align="center">RAG<br>Prompt Engineering</div> |
+| <div align="center">BackEnd<br>요구사항정의서</div> | <div align="center">FrontEnd<br>화면설계서</div> | <div align="center">BackEnd<br>화면설계서</div> |
 
  ---
  
-# 📜 제품 사용 설명서 질의응답 챗봇
+# 📜 LLM을 연동한 내외부 문서 기반 질의 응답 웹페이지 개발
+
 ## 🔖프로젝트 배경
 
 ![배경](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%B0%B0%EA%B2%BD.jpg)
