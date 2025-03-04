@@ -5,7 +5,7 @@
 ---
 
 # 🏃🏃‍♂️🏃‍♀️ 팀명 : 김성근과 아이들
-|<img src="https://github.com/pladata-encore/SKN07-3rd-2Team/blob/main/image/%E3%85%85%E3%84%B1.jpg" alt="김성근" width="120"/>|<img src="https://github.com/pladata-encore/SKN07-3rd-2Team/blob/main/image/%E3%85%85%E3%85%81.jpg" alt="윤수민" width="120"/>|<img src="https://github.com/pladata-encore/SKN07-3rd-2Team/blob/main/image/%E3%85%88%E3%85%8A.jpg" alt="이재철" width="120"/>|
+|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%84%B1.jpg" alt="김성근" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%85%81.jpg" alt="윤수민" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%88%E3%85%8A.jpg" alt="이재철" width="120"/>|
 |---|---|---|
 | <div align="center">**김성근**</div> | <div align="center">**윤수민**</div> | <div align="center">**이재철**</div> |
 | <div align="center">Refactoring</div> | <div align="center">Streamlit</div> | <div align="center">RAG<br>Prompt Engineering</div> |
@@ -37,13 +37,11 @@
 - 사용자의 인지 부하를 줄이고, 효율적인 정보 탐색을 지원하는 Q&A 시스템 구축
 
 ## 주요 산출물
-1. 요구사항 정의서
+1. [요구사항 정의서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
 
-2. 화면 설계서
+2. [화면 설계서](pdf 주소 넣을곳)
 
-3. 개발된 LLM 연동 웹 애플리케이션
-
-4. 결과 보고서
+3. [개발된 LLM 연동 웹 애플리케이션](http://localhost:8501)
 
 ---
 
@@ -67,18 +65,21 @@
 
 - gpt-4o-mini-2024-07-18
 ---
-## 요구사항 정의서
-![요구사항](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
+
 ## System Architecture
 ![architecture](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-3rd-2Team/blob/main/image/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.jpg)
 
+
+## 요구사항 정의서
+![요구사항](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
+
 ## 화면 설계서
 
-
+![화면 설계서](구글 주소 넣어 말아)
 
 ## 애플리케이션 시연
 
-
+![메인화면](이미지 주소 넣자)
 
 ---
 
@@ -88,4 +89,4 @@
 
 윤수민 : 
 
-이재철 : 
+이재철 : 배운걸 써야한다는 생각보다 완성도를 챙기고 싶은 마음으로 진행하다가 시간이 부족하여 외부 사용자가 사용할 수 있게 웹서비스는 못한 점이 아쉽다. 마지막 최종 프로젝트에서는 좀 더 잘해봐야겠다.
