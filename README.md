@@ -4,7 +4,7 @@
 
 ---
 
-# 🏃🏃‍♂️🏃‍♀️ 팀명 : 개구리 삼총사
+# 팀명 : 개구리 삼총사 🏃🏃‍♂️🏃‍♀️
 |<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%84%B1.jpg" alt="김성근" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%85%E3%85%81.jpg" alt="윤수민" width="120"/>|<img src="https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%E3%85%88%E3%85%8A.jpg" alt="이재철" width="120"/>|
 |---|---|---|
 | <div align="center">**김성근**</div> | <div align="center">**윤수민**</div> | <div align="center">**이재철**</div> |
@@ -14,7 +14,7 @@
  
 # 📜 LLM을 연동한 내외부 문서 기반 질의 응답 웹페이지 개발
 
-## 🔖프로젝트 배경
+## 🔖 프로젝트 배경
 
 ![배경](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%B0%B0%EA%B2%BD.jpg)
 ---
@@ -29,7 +29,7 @@
 
 ---
 
-## 프로젝트 개요
+## 🔖 프로젝트 개요
 
 - 긴 문서의 가독성을 높이기 위한 최적화된 Q&A 모델 제공
 
@@ -37,7 +37,7 @@
 
 - 사용자의 인지 부하를 줄이고, 효율적인 정보 탐색을 지원하는 Q&A 시스템 구축
 
-## 주요 산출물
+## 🔖 주요 산출물
 1. [요구사항 정의서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/%EC%82%B0%EC%B6%9C%EB%AC%BC/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EC%A0%95%EC%9D%98%EC%84%9C.pdf)
 
 2. [화면 설계서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/%EC%82%B0%EC%B6%9C%EB%AC%BC/%ED%99%94%EB%A9%B4%20%EC%84%A4%EA%B3%84%EC%84%9C.pdf)
@@ -46,7 +46,7 @@
 
 ---
 
-## 🔨 기술 스택
+## 🔖 기술 스택
 <div>
 <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
 <img src="https://a11ybadges.com/badge?logo=openai" alt="OpenAI" width="163" height="28"/>
@@ -67,13 +67,13 @@
 - gpt-4o-mini-2024-07-18
 ---
 
-## System Architecture
+## 🔖 System Architecture
 ![architecture](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-3rd-2Team/blob/main/image/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.jpg)
 
-## 요구사항 정의서
+## 🔖 요구사항 정의서
 ![요구사항](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.jpg)
 
-## 애플리케이션 시연
+## 🔖 애플리케이션 시연
 
 ![시연1](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN07-4th-2Team/blob/main/image/%EC%8B%9C%EC%97%B0%ED%99%94%EB%A9%B41.jpg)
 
@@ -81,10 +81,10 @@
 
 ---
 
-## 📖 한 줄 회고
+## 🔖 한 줄 회고
 
 김성근 : 
 
-윤수민 : 
+윤수민 : 지난번 프로젝트 내용을 고도화 하는게 재밌었다. 화면 구성도 바꾸고, 필요한 기능도 추가하며 시간이 더 있었으면 했다. 화면 구현보다 기능 추가가 더 우선적이라 장고가 아닌 스트림릿을 쓰며 장점과 한계점을 동시에 느꼈다.
 
 이재철 : 배운걸 써야한다는 생각보다 완성도를 챙기고 싶은 마음으로 진행하다가 시간이 부족하여 외부 사용자가 사용할 수 있게 웹서비스는 못한 점이 아쉽다. 마지막 최종 프로젝트에서는 좀 더 잘해봐야겠다.
